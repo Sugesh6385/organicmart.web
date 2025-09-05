@@ -1,0 +1,136 @@
+{% load static%}
+<style>
+    .add-button {
+        background-color: rgb(15, 49, 241);
+        color: black;
+        border-radius: 100%;
+        padding-left: 2px;
+        font-size: 190%;
+    }
+    
+    .popup-overlay {
+        background-color: #fff;
+        opacity: 0.8; /* Removed px, corrected opacity */
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: 1;
+        display: none; /* Hide by default */
+    }
+    
+    .popup-box {
+        background-image: url("{% static 'img/360_F_701300002_93XOhSc4xpsL2h9qGH390y7kB9TyskyU.jpg' %}");
+        width: 30%;
+        height: 30%;
+        padding: 40px;
+        border-radius: 10px;
+        position: absolute;
+        top: 20%;
+        left: 70%;
+        z-index: 2;
+        display: none; /* Hide by default */
+    }
+    
+    .popup-box input {
+        background: transparent;
+        border: none;
+        width: 100%;
+        font-size: 20px;
+        border-bottom: solid black 2px;
+    }
+    
+    .popup-box textarea {
+        background: transparent;
+        border: none;
+        width: 100%;
+        font-size: 20px;
+        border-bottom: solid black 2px;
+    }
+    
+    .popup-box input::placeholder {
+        color: grey;
+    }
+    
+    .popup-box button {
+        background-color: rgb(126, 120, 120);
+        color: white;
+        margin: 5px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    </style>
+    
+    <body>
+        <div class="popup-overlay"></div>
+        <div class="popup-box">
+            <h2>ADD Products</h2>
+            <form id="product-form">
+                <input type="text" placeholder="Product Name" id="book-title-input">
+                <input type="text" placeholder="Product Detail" id="book-author-input"><br>
+                <textarea placeholder="Short Description" id="book-description-input"></textarea><br>
+                <button id="add-product" type="submit">Add</button>
+                <button type="button" id="cancel-popup">Cancel</button>
+            </form>
+        </div>
+        <button class="add-button" id="add-popup-button">Add</button>
+    
+        <script>
+            // Selecting elements
+            var popupoverlay = document.querySelector(".popup-overlay");
+            var popupbox = document.querySelector(".popup-box");
+            var addpopupbutton = document.getElementById("add-popup-button");
+            var cancelpopup = document.getElementById("cancel-popup");
+            var form = document.getElementById("product-form");
+    
+            // Show popup when "Add" button is clicked
+            addpopupbutton.addEventListener("click", function () {
+                popupoverlay.style.display = "block";
+                popupbox.style.display = "block";
+            });
+    
+            // Close popup when "Cancel" button is clicked
+            cancelpopup.addEventListener("click", function () {
+                popupoverlay.style.display = "none";
+                popupbox.style.display = "none";
+            });
+    
+            // Prevent form submission to avoid page reload
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                // Handle form submission logic here, such as adding the product
+                console.log("Product Added");
+    
+                // Close the popup after form submission (if desired)
+                popupoverlay.style.display = "none";
+                popupbox.style.display = "none";
+            });
+        </script>
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <li id="homebutton">home</li>
+<li id="productbutton">product</li>
+<li id="aboutbutton">about</li>
+<li id="contactbutton">contact</li>
+document.getElementById("productbutton").addEventListener("click",function(){
+    window.location.href="product.html";});
+        document.getElementById("homebutton").addEventListener("click",function(){
+            window.location.href="home.html";});
+                document.getElementById("contactbutton").addEventListener("click",function(){
+                    window.location.href="contact.html";});
+                    document.getElementById("aboutbutton").addEventListener("click",function(){
+                        window.location.href="about.html";});
+                    
+                    
+    

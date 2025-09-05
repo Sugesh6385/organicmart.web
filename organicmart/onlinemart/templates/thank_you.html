@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color:rgb(103, 209, 202);
+        }
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        .summary {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color:rgb(113, 208, 98);
+            padding: 20px;
+            border-radius: 68px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .summary h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .summary p {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank You for Your Purchase, {{ name }}!</h1>
+    <div class="summary"><center>
+        <h2>Order Summary</h2>
+        <p><strong>Product Name:</strong> {{ product_name }}</p>
+        <p><strong>Quantity:</strong> {{ quantity }}</p>
+        <p><strong>Total Price:</strong> Rs. {{ total_price }}</p>
+        <p><strong>Payment Type:</strong> {{ payment_type }}</p>
+        <p><strong>Delivery Address:</strong> {{ address }}</p>
+        <p style="color: green;"><strong>You are saving:</strong> Rs. {{ savings }}</p></center>
+    </div>
+    <a href="{% url 'home' %}" class="btn">Return to Home</a>
+</body>
+</html>
+
+
+

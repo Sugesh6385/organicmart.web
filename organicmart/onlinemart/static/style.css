@@ -1,0 +1,302 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header Styling */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensure responsiveness */
+}
+
+.header h1 {
+    font-size: 24px;
+    flex: 1; /* Allow the title to take up space */
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure items wrap on smaller screens */
+}
+
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.header ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Popup Styling */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.popup-box {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1001;
+    width: 90%; /* Ensure it fits on smaller screens */
+    max-width: 400px; /* Limit the maximum width */
+}
+
+/* Search Bar Styling */
+.searchbar-container {
+    margin: 20px;
+    text-align: center;
+}
+
+.searchbar input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Slider Styling */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 75%;
+}
+
+/* Deal of the Day Section */
+.deal-of-the-day {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure products wrap on smaller screens */
+    padding: 0 10px; /* Add padding for better alignment */
+}
+.product-box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensures the image fits without distortion */
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.product-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-box h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.product-box p {
+    font-size: 16px;
+    color: #4CAF50;
+}
+
+.product-box button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-box button:hover {
+    background-color: #45a049;
+}
+
+/* Categories Section */
+.categories {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.category-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure categories wrap on smaller screens */
+    padding: 0 10px; /* Add padding for better alignment */
+}
+
+.category-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.category-box h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+/* Features Section */
+.features {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.feature-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure features wrap on smaller screens */
+    padding: 0 10px; /* Add padding for better alignment */
+}
+
+.feature-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    width: 220px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.feature-box img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.feature-box h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.feature-box p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.feature-box button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.feature-box button:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer h2,
+footer h3 {
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Ensure links wrap on smaller screens */
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product-box,
+    .category-box,
+    .feature-box {
+        width: 100%; /* Full width on smaller screens */
+    }
+}

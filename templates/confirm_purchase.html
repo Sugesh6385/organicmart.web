@@ -1,0 +1,8 @@
+<!-- ...existing code... -->
+<h2>Confirm Purchase</h2>
+<p>Are you sure you want to confirm purchase for Order #{{ order.id }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+</form>
+<!-- ...existing code... -->

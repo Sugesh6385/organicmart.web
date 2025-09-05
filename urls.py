@@ -1,0 +1,9 @@
+# ...existing code...
+from . import views
+
+urlpatterns = [
+    # ...existing code...
+    path('confirm_purchase/<int:order_id>/', views.confirm_purchase, name='confirm_purchase'),
+    path('purchase_success/', views.purchase_success, name='purchase_success'),
+    # ...existing code...
+]

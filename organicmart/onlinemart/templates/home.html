@@ -1,0 +1,490 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Mart</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url("{% static 'img/360_F_701300002_93XOhSc4xpsL2h9qGH390y7kB9TyskyU.jpg'%}");
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .header ul li {
+            display: inline;
+        }
+
+        .header ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header ul li a:hover {
+            color: #c8e6c9;
+        }
+
+        .search{
+            border-radius: 8px;
+            border: 1px solid green;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        .search-btn{
+            background-color: #4CAF50;
+            color: white;
+            margin-top: 5px;
+            border: none;
+            padding: 5px 8px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 12px
+            transition: background-color 0.3s ease;
+        }
+
+        /* Slider Styling */
+        .slider {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            position: relative;
+            margin: 20px 0;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            height: 100%;
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section Styling */
+        .section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section h1 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 30px;
+            color: #2e7d32;
+        }
+
+        /* Deal of the Day Section */
+        .deal-of-the-day {
+            background-color: white;
+            padding: 40px 20px;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-box {
+            background-color: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-box h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .product-box p {
+            font-size: 18px;
+            color: #4CAF50;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .product-box button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .product-box button:hover {
+            background-color: #45a049;
+        }
+
+        /* Categories Section */
+        .categories {
+          
+            padding: 40px 20px;
+        }
+
+        .category-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .category-box {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .category-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .category-box h3 {
+            font-size: 20px;
+            color: #333;
+        }
+
+        /* Footer Styling */
+        
+        .footer  {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            margin-height: 30px;
+        }
+
+        footer h2 {
+            color: #4CAF50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        footer h3 {
+            color: #4CAF50;
+            font-size: 20px;
+            margin: 20px 0 10px 0;
+        }
+
+        footer p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 8px 16px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background-color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header ul {
+                gap: 20px;
+            }
+
+            .slider {
+                height: 250px;
+            }
+
+            .section h1 {
+                font-size: 28px;
+            }
+
+            .product-container,
+            .category-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .slider {
+                height: 200px;
+            }
+
+            .section {
+                padding: 20px 15px;
+            }
+
+            .deal-of-the-day,
+            .categories {
+                padding: 20px 15px;
+            }
+        }
+
+        /* Auto-slider animation */
+        @keyframes slideShow {
+            0% { transform: translateX(0); }
+            33.33% { transform: translateX(-100%); }
+            66.66% { transform: translateX(-200%); }
+            100% { transform: translateX(0); }
+        }
+
+        .slides {
+            animation: slideShow 9s infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav>
+            <h1>Organic Mart</h1>
+          
+                <ul>
+                 <li onclick="window.Location.href='home.html'">    <a href="{% url 'home' %}">Home </a></li>
+                 <li onclick="window.Location.href='product.html'">  <a href="{% url 'product' %}">product </a> </li>
+                 <li onclick="window.Location.href='contact.html'">   <a href="{% url 'contact' %}">Contact </a></li>
+                 <li onclick="window.Location.href='about.html'">    <a href="{% url 'about' %}">About </a></li>  
+                </ul>
+          
+   
+                
+                 
+        </nav>
+    </header>
+    <center>
+    <input class="search" type="text" name="q" placeholder="Search for products..." required>
+    <button class="search-btn" type="submit">search</button></center>
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slides">
+        <div class="slide">
+                <img src="{% static 'img/woman-shopping-organic-vegetables-fruits_926199-1961947.avif' %}">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/cute-toddler-boy-supermarket-choosing-fresh-organic-carrots-food-store-healthy-lifestyle-young-family-kids-78041724.webp' %}">
+            </div>
+        <div class="slide">
+                <img src="{% static 'img/young-woman-shopping-supermarket-choosing-apples-store_259348-7968.avif' %}">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/images (7).jpeg' %}">
+            </div>
+        </div>
+    </div>
+    
+   </button>
+   
+   <center>
+
+   <h2>Vegetables</h2></center>
+   <div class="product-container">
+
+  
+    <!-- Product 1 -->
+        <div class="product-box">
+        <img src="{% static 'img/images (8).jpeg' %}"alt="Onion">
+        <h3> Onion 500g</h3>
+        <p>Rs: 50.00</p>
+        <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+    </div>
+     <!-- Product 2 -->
+     <div class="product-box">
+        <img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=300&h=200&fit=crop" alt="Potato">
+        <h3>Potato 1kg</h3>
+        <p>Rs: 84.00</p>
+        <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+    </div>
+
+
+    <!-- Product 3 -->
+    <div class="product-box">
+        <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?w=300&h=200&fit=crop" alt="Carrot">
+        <h3>Fresh Carrot 1kg</h3>
+        <p>Rs: 79.00</p>
+        <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+    </div>
+</div>
+
+<!-- See More Button -->
+<div style="text-align: center; margin-top: 20px;">
+    <button  style="background-color: #4CAF50; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+        See More
+    </button>
+</div>           
+  
+   
+   
+    <!-- Categories Section -->
+    <center><section class="categories">
+        <h1>Categories</h1>
+        <div class="category-container">
+            <div class="category-box">
+                <img src="https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=300&h=200&fit=crop" alt="Fresh Fruits">
+                <h3>Fresh Fruits</h3>
+            </div>
+            <div class="category-box">
+                <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?w=300&h=200&fit=crop" alt="Exotic Vegetables">
+                <h3>Exotic Vegetables</h3>
+            </div>
+            <div class="category-box">
+                <img src="https://images.unsplash.com/photo-1571771894821-ce9b6c11b08e?w=300&h=200&fit=crop" alt="Exotic Fruits">
+                <h3>Exotic Fruits</h3>
+            </div>
+        </div>
+        <!-- See More Button -->
+<div style="text-align: center; margin-top: 20px;">
+    <button  style="background-color: #4CAF50; color: white; border: none; padding: 12px 24px; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;">
+        See More
+    </button>
+</div>
+    </section></center>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+        <h2>Organic Mart</h2>
+        <p>We deal in various organic products and fresh home-baked dishes required in daily life.</p>
+        <p>100% Organic with no preservatives added. No return orders accepted.</p>
+        <h3>Visit Our Store</h3>
+        <p>Near police station opposite, Karimangalam, Dharmapuri-635205, Tamilnadu.</p>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping & Payment Policy</a>
+        </div>
+    </footer>
+</body>
+</html>
