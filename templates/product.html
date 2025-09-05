@@ -1,0 +1,598 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Mart</title>
+</head>
+<style>
+
+*{
+
+ margin:0px;
+ padding:0px;
+}
+
+
+body ,html {
+    background-image:url("{% static 'img/morning-light-shines-on-lush-green-meadow-surrounded-by-vibrant-trees-photo.jpeg'%}") ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    
+}
+footer {
+    bottom: 0; /* Align it to the bottom of the viewport */
+    width: 100%; /* Ensure it spans the full width */
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+    background-color: black; /* Ensure consistent background */
+    color: white; /* Ensure text is visible */
+    text-align: center; /* Center-align the content */
+}  
+    
+
+/* Header Styling */
+.header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0  20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.header ul li {
+    display: inline;
+}
+
+.header ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header ul li a:hover {
+    color: #c8e6c9;
+}
+
+
+.slider {
+    width: 100%; /* Make the slider container take full width */
+    overflow: hidden; /* Hide the images that are out of the container */
+    position: relative;
+}
+
+.slides {
+    display: flex; /* Align the slides in a horizontal row */
+    transition: transform 1s ease; /* Smooth transition for sliding */
+}
+
+.slide {
+    min-width: 100%; /* Each slide takes full width */
+    flex: 0 0 auto; /* Prevent slides from shrinking or expanding */
+}
+
+img {
+    width: 100%; /* Ensure the image covers the full width of the slide */
+    height: 720px; /* Keep aspect ratio of images */
+}
+.slides {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+.mark{
+    background-color:skyblue;
+    color: rgb(13, 13, 14);
+}
+.see{
+margin-bottom: 5px;
+margin-top: 10px;
+}
+/* Container for all products */
+.contain {
+    display: flex;
+    flex-wrap: wrap; /* Ensure the boxes wrap to the next row if needed */
+    justify-content: space-around; /* Space out items evenly */
+    gap: 20px; /* Space between the product boxes */
+    padding: 20px;
+}
+
+/* Styling for each product box */
+.box1, .box2, .box3, .box4 {
+    border: solid black 2px;
+    width: 250px; /* Make boxes the same width */
+    padding: 20px;
+    text-align: center; /* Center content inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    background-color: white; /* Optional: Adds a background color */
+   
+}
+
+/* Hover effect for product boxes */
+.box1:hover, .box2:hover, .box3:hover, .box4:hover {
+    transform: translateY(-10px); /* Slight lift effect */
+}
+/* Image styling */
+.box1 img, .box2 img, .box3 img, .box4 img {
+    height: 220px;
+    width: 220px;
+    object-fit: cover; /* Ensures image fills the box without distortion */
+    border-radius: 8px; /* Optional: Adds rounded corners to the image */
+}
+.hello{
+    margin-top: 10px;
+    margin-bottom: 20px;
+ 
+}
+.ipl{
+ background-color:black;
+ margin-top: 30px;
+ padding: 30px;
+ width: 100%;
+color:white;
+text-align: center;}
+
+.mm{
+    color:red;
+    font-size:larger;
+   
+}
+
+.csk{
+      text-align: 10px;
+
+
+}
+button{
+    background:skyblue;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+input[type="button"] {
+    padding: 8px 15px;
+    cursor:pointer;
+    background-color:green;
+    border:none;
+    border-radius: 5px;
+    color: white;
+}
+.product-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product-box {
+    border: 2px solid black;
+    width: 250px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+.product-box img {
+    height: 220px;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.product-box h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.product-box p {
+    font-size: 16px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+.product-box button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-box button:hover {
+    background-color: #45a049;
+}
+
+
+
+/* Footer Styling */
+        
+.footer  {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    margin-height: 30px;
+}
+
+footer h2 {
+    color: #4CAF50;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+footer h3 {
+    color: #4CAF50;
+    font-size: 20px;
+    margin: 20px 0 10px 0;
+}
+
+footer p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    padding: 8px 16px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.footer-links a:hover {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header ul {
+        gap: 20px;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .section h1 {
+        font-size: 28px;
+    }
+
+    .product-container,
+    .category-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .slider {
+        height: 200px;
+    }
+
+    .section {
+        padding: 20px 15px;
+    }
+
+    .deal-of-the-day,
+    .categories {
+        padding: 20px 15px;
+    }
+}
+  
+</style>
+
+<body>
+    <div class="header">
+        <nav>
+           <h1>Organic Mart.</h1>
+        
+           <ul>
+            <li onclick="window.Location.href='home.html'">    <a href="{% url 'home' %}">Home </a></li>
+            <li onclick="window.Location.href='product.html'">  <a href="{% url 'product' %}">product</a> </li>
+            <li onclick="window.Location.href='contact.html'">   <a href="{% url 'contact' %}">Contact </a></li>
+            <li onclick="window.Location.href='about.html'">    <a href="{% url 'about' %}">About </a></li>  
+           
+           
+            </ul>
+        </nav>
+       </div>
+<div class="mark">
+    <marquee><h2>Free Delivery ~For All Product ~ ~ ~ ~ ~ ~ ~   Buy 2 Products / Get 1 Product Free   // </h2></marquee>
+</div>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="{% static 'img/Yellow Modern Fruit Store Promotion Banner.jpg' %}" height="620px" width="100%" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/Screenshot From 2025-06-26 19-14-50.png' %}" height="720px" width="100%" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/Screenshot From 2025-06-26 19-20-50.png' %}" height="720px" width="100%" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/Screenshot From 2025-06-26 19-14-50.png'%}" height="720px" width="100%" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/Screenshot From 2025-06-26 19-27-12.png' %}" height="720px" width="100%" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="{% static 'img/Screenshot From 2025-06-26 19-27-21.png' %}" height="720px" width="100%" alt="Image 3">
+
+            </div>
+          
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <center>
+        <div class="see">
+            <h1>Fruits Section </h1>
+        </div>
+        <div class="contain">
+            <!-- Box 1 -->
+            <div class="box1">
+                <img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?w=300&h=200&fit=crop" height="220px" width="320px" alt="Apple">
+                <h3>Fresh Apple 1kg</h3>
+                <p>Rs: 150.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 2 -->
+            <div class="box2">
+                <img src="https://images.unsplash.com/photo-1574226516831-e1dff420485d?w=300&h=200&fit=crop" height="220px" width="220px" alt="Banana">
+                <h3>Fresh Banana 1kg</h3>
+                <p>Rs: 50.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 3 -->
+            <div class="box3">
+                <img src="https://images.unsplash.com/photo-1582287220008-3c6f1b45f8d4?w=300&h=200&fit=crop" height="220px" width="220px" alt="Tomato">
+                <h3>Fresh Tomato 1kg</h3>
+                <p>Rs: 100.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 4 -->
+            <div class="box4">
+                <img src="https://images.unsplash.com/photo-1445282768818-728615cc910a?w=300&h=200&fit=crop" height="220px" width="220px" alt="Carrot">
+                <h3>Fresh Carrot 1kg</h3>
+                <p>Rs: 79.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 5 -->
+            <div class="box1">
+                <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783?w=300&h=200&fit=crop" height="220px" width="320px" alt="Strawberry">
+                <h3>Fresh Strawberry 500g</h3>
+                <p>Rs: 200.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 6 -->
+            <div class="box2">
+                <img src="https://images.unsplash.com/photo-1571046812121-7c6073c1f1d0?w=300&h=200&fit=crop" height="220px" width="220px" alt="Pineapple">
+                <h3>Fresh Pineapple 1pc</h3>
+                <p>Rs: 90.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 7 -->
+            <div class="box3">
+                <img src="https://images.unsplash.com/photo-1611080627610-8b6b5d6b7b8e?w=300&h=200&fit=crop" height="220px" width="220px" alt="Watermelon">
+                <h3>Fresh Watermelon 1pc</h3>
+                <p>Rs: 120.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        
+            <!-- Box 8 -->
+            <div class="box4">
+                <img src="{% static 'img/Pasted image (4).png' %} height="220px" width="220px" alt="Mango ">
+                <h3>Fresh Mango 1kg</h3>
+                <p>Rs: 150.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+        </div>
+        
+            
+      
+
+    <div class="hello">
+        <button onclick="togglecontent()"> More Result </button>
+   </div>  </center>
+
+
+
+
+
+
+    <h1>Vegetables Section</h1>
+    <div class="contain">
+        <div class="box1">
+            <img src="https://images.unsplash.com/photo-1583496661160-fb5886a13d77?w=300&h=200&fit=crop" height="220px" width="200px" alt="Beans">
+           <h3>Fresh Beans 500g</h3>
+            <p>Rs: 70.00</p>
+            <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+        </div>  
+        <div class="box1">
+            <img src="{% static 'img/download.jpeg' %}" height="220px" width="220px" alt="Beans">
+            <h3>Tomato  1Kg</h3>
+            <p>Rs: 100.00</p>
+            <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+        </div>  
+        <div class="box1">
+            <img src="{% static 'img/download (2)..jpeg' %}" height="220px" width="220px" alt="Beans">
+            <h3>Fresh Carrot 1Kg</h3>
+            <p>Rs: 79.00</p>
+            <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+        </div>  <br>
+    </div>
+    <!-- Product Section -->
+    <center>
+
+        <div class="product-container">
+            <!-- Product 1 -->
+            <div class="product-box">
+                <img src="{% static 'img/download (1).jpeg' %}" alt="Potato">
+                <h3>Potato 1kg</h3>
+                <p>Rs: 84.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product-box">
+                <img src="{% static 'img/download (2)..jpeg' %}" alt="Beans">
+                <h3>Fresh Beans 500g</h3>
+                <p>Rs: 70.00</p>
+                <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+            </div>
+                <!-- Product 3 -->
+                <div class="product-box">
+                    <img src="{% static 'img/images (8).jpeg' %}" alt="Onion">
+                    <h3>Onion 1kg</h3>
+                    <p>Rs: 98.00</p>
+                    <a href="{% url 'buy_now' %}" class="btn">Buy Now</a>
+                </div>
+            </div>
+        
+
+    <div class="hello">
+       <button onclick="togglecontent()"> More Result </button>
+     
+          
+    </div></div></center>
+     
+
+
+
+
+
+        <!-- Footer Section -->
+    <footer>
+        <div class="footer">
+        <h2>Organic Mart</h2>
+        <p>We deal in various organic products and fresh home-baked dishes required in daily life.</p>
+        <p>100% Organic with no preservatives added. No return orders accepted.</p>
+        <h3>Visit Our Store</h3>
+        <p>Near police station opposite, Karimangalam, Dharmapuri-635205, Tamilnadu.</p>
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping & Payment Policy</a>
+        </div></div>
+    </footer>
+
+
+   
+
+<script>
+    let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showNextSlide(){
+
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlidePosition();
+}
+
+function updateSlidePosition() {
+    const slidesContainer = document.querySelector('.slides');
+    const offset = -currentIndex * 100;
+    slidesContainer.style.transform = `translateX(${offset}%)`;
+}
+
+setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+</script>
+</body>
+    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

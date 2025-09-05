@@ -1,0 +1,322 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Mart</title>
+</head>
+<style>
+
+*{
+
+margin:0px;
+padding:0px;
+}
+body {
+   background-image: url("{% static 'img/desktop-wallpaper-tropical-beach-palms-sea-sunshine-boat-sand-tropical-beach.jpg' %}");
+   background-size: cover;
+   background-repeat: no-repeat;
+   font-family: Arial, sans-serif;
+   overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+nav {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    width: 100%; /* Ensure the nav bar spans the full width */
+    box-sizing: border-box; /* Include padding in the width */
+}
+ul,li,h1{
+     display:inline;
+     
+
+}
+ul{
+   margin-left: 70%;
+}
+
+li:hover{
+   color: black;
+   cursor: pointer;
+}
+.ipl{
+ background-color:black;
+ margin-top: 30px;
+ padding: 30px;
+ width: 100%;
+color:white;
+text-align: center;}
+
+.mm{
+    color:red;
+    font-size:larger;
+   
+}
+
+.csk{
+      text-align: 10px;}
+      body {
+    background-image:url("{% static 'img/desktop-wallpaper-tropical-beach-palms-sea-sunshine-boat-sand-tropical-beach.jpg'%}" );
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+} 
+.oo{
+   color:black;
+   text-align: center;
+   margin-top:20px;
+ 
+
+}
+.ooi{
+   color: white;
+   text-align: center;
+   
+}
+.ass{
+   color: rgb(241, 235, 235);
+   text-align: left 5px;
+}
+.mmm{
+   text-align: center;
+   color:rgb(184, 28, 28);
+   margin-top: 5px;
+}
+.okay{
+   text-align: center;
+   color: black;
+}
+
+
+</style>{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Mart - Contact Us</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("{% static 'img/desktop-wallpaper-tropical-beach-palms-sea-sunshine-boat-sand-tropical-beach.jpg' %}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes the full height of the viewport */
+        }
+
+        /* Header Styling */
+        .header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .header ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .header ul li {
+            display: inline;
+        }
+
+        .header ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .header ul li a:hover {
+            color: #c8e6c9;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex: 1; /* Push the footer to the bottom */
+            padding: 20px;
+            text-align: center;
+            color: black;
+        }
+
+        .main-content h1, .main-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .subscribe {
+            margin-top: 20px;
+        }
+
+        .subscribe input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .subscribe button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .subscribe button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px;
+        }
+
+        footer h2, footer h3, footer h4 {
+            margin-bottom: 10px;
+        }
+
+        footer .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Ensure links wrap on smaller screens */
+            margin-top: 20px;
+        }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            padding: 5px 10px;
+            border: 1px solid #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        footer .footer-links a:hover {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        @media (max-width: 768px) {
+            .header nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .header ul {
+                gap: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav>
+            <h1>Organic&nbsp;Mart</h1>
+          
+                <ul>
+                 <li onclick="window.Location.href='home.html'">    <a href="{% url 'home' %}">Home </a></li>
+                 <li onclick="window.Location.href='product.html'">  <a href="{% url 'product' %}">product </a> </li>
+                 <li onclick="window.Location.href='contact.html'">   <a href="{% url 'contact' %}">Contact </a></li>
+                 <li onclick="window.Location.href='about.html'">    <a href="{% url 'about' %}">About </a></li>  
+                </ul>
+          
+   
+                
+                 
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <h1>Contact Us</h1>
+        <p>We are dealing in various organic products as well as fresh home-baked dishes required in daily life.</p>
+        <p>Our products are 100% Organic with no preservatives added.</p>
+        <p>We do not accept return orders!</p>
+
+        <h2>Visit Our Store</h2>
+        <p>Near police station opposite, Karimangalam</p>
+        <p>Dharmapuri-635205, Tamilnadu.</p>
+
+        <!-- Subscription Section -->
+        <div class="subscribe">
+            <h2>Subscribe for Latest Updates & Offers</h2>
+            <input type="text" placeholder="Enter your phone number">
+            <button>Subscribe</button>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <h2>Organic Mart</h2>
+        <p>We deal in various organic products and fresh home-baked dishes required in daily life.</p>
+        <p>100% Organic with no preservatives added. No return orders accepted.</p>
+        <h3>Visit Our Store</h3>
+        <p>Near police station opposite, Karimangalam, Dharmapuri-635205, Tamilnadu.</p>
+        
+        <div class="footer-links">
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Shipping & Payment Policy</a>
+        </div>
+        
+        <p>&copy; 2025 Organic Mart. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+
+         
+  
+      
+             
+       
